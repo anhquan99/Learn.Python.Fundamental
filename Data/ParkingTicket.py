@@ -1,12 +1,10 @@
 
 class ParkingTicket:
-    def __init__(self, car_id, arrive_time, fqn: str):
-        self.car_id = car_id
+    def __init__(self, arrive_time, fqn: str):
         self.arrive_time = arrive_time
         self.fqn = fqn
         
-    def __init__(self, car_id: str, arrive_time, fqn: str, exist_time, price):
-        self.car_id = car_id
+    def __init__(self, arrive_time, fqn: str, exist_time, price):
         self.arrive_time = arrive_time
         self.exist_time = exist_time
         self.price = price
@@ -18,3 +16,10 @@ class ParkingTicket:
         for i in range(len(fqn)):
             sum += int(fqn[i]) * (i + 1)
         return sum == 0 and sum % modulo_number == 0
+    @property
+    def fqn(self):
+        return self._fqn
+    @fqn.setter
+    def fqn(self, fqn):
+        self._fqn = fqn
+        self.is_valid_fqn = self.check_valid_fqn(fqn)
