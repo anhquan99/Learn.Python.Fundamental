@@ -9,5 +9,5 @@ class Park:
         if existed_car is None:
             self.cars.append(car)
         elif existed_car.is_parking():
-            raise CarException("Car is already parked")
+            raise CarException("Car is already parked.")
         existed_car.parking_tickets.append(parking_ticket)

@@ -1,5 +1,5 @@
-from Data.Car import Car
+from Utils.ImportCsv import ImportParkingPriceList
 if __name__ == '__main__':
-    print("Hello from main")
-    car = Car("ABC-123456", "12343")
-    car.print()
+    importer = ImportParkingPriceList()
+    data = importer.import_parking_price_list("SampleData.csv")
+    data.print()
