@@ -3,12 +3,15 @@ class ParkingTicket:
     def __init__(self, arrive_time, fqn: str):
         self.arrive_time = arrive_time
         self.fqn = fqn
+        self.is_valid_fqn = self.check_valid_fqn(fqn)
+        self.exist_time = None
         
-    def __init__(self, arrive_time, fqn: str, exist_time, price):
-        self.arrive_time = arrive_time
-        self.exist_time = exist_time
-        self.price = price
-        self.fqn = fqn
+    # def __init__(self, arrive_time, fqn: str, exist_time, price):
+    #     self.arrive_time = arrive_time
+    #     self.exist_time = exist_time
+    #     self.price = price
+    #     self.fqn = fqn
+    #     self.is_valid_fqn = check_valid_fqn(fqn)
     
     def check_valid_fqn(self, fqn):
         modulo_number = 7
