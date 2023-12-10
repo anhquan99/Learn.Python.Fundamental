@@ -1,11 +1,13 @@
 import datetime as dt
 from Utils.ImportCsv import ImportParkingPriceList
-from Business import Park, Pickup
+from Utils import FileHelper
+from Business import Park, Pickup, History
 from Data import Car, ParkingTicket
+
 def initialize():
     global price_list
     global cars 
-    cars = []
+    cars = FileHelper.read_from_file()
     importer = ImportParkingPriceList()
     price_list = importer.import_parking_price_list("SampleData.csv")
 
@@ -29,3 +31,5 @@ if __name__ == '__main__':
     for i in cars:
         for o in i.parking_tickets:
             print(i.identity, i.available_credit, o.fqn, o.arrive_time, o.exist_time, o.price)
+    history = History.History(cars)
+    history.export_history_of_car("50A-12345")

@@ -15,6 +15,6 @@ class Car:
             raise InputException("Available Credit")
         self._available_credit = available_credit
     def is_parking(self):
-        return any(lambda x: x.exist_time is None, self.parking_tickets)
+        return filter(lambda x: x.exist_time is None, self.parking_tickets) is not None
     def get_current_parking_ticket(self):
         return next((x for x in self.parking_tickets if x.exist_time is None), None)

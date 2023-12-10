@@ -1,6 +1,7 @@
 from Data.Car import Car
 from Data.ParkingTicket import ParkingTicket
-from Exception import CarException
+from Exception.CarException import CarException
+from Utils import FileHelper
 class Park:
     def __init__(self, cars: []):
         self.cars = cars
@@ -12,3 +13,4 @@ class Park:
         elif existed_car.is_parking():
             raise CarException("Car is already parked.")
         existed_car.parking_tickets.append(parking_ticket)
+        FileHelper.write_to_file(self.cars)
