@@ -3,6 +3,7 @@ class ParkDay:
     def __init__(self, day_of_week):
         self.park_hours = []
         self.day_of_week = day_of_week
+        self.park_hours = []
     def print(self):
         print(self.day_of_week)
         for i in self.park_hours:
