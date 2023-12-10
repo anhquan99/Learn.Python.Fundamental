@@ -1,0 +1,10 @@
+Day of week,Arrive time,,,,,
+,From 08:00 - 16:59,,From 17:00 - Midnight,,Midnight - 07:59,
+,Max stay in hours,Price per hour,Max stay in hours,Price per hour,Max stay in hours,Price per hour
+Sunday,8,2.00,Up to midnight,5.00,None,20.00
+Monday,2,10.00,Up to midnight,5.00,None,20.00
+Tuesday,2,10.00,Up to midnight,5.00,None,20.00
+Wednesday,2,10.00,Up to midnight,5.00,None,20.00
+Thursday,2,10.00,Up to midnight,5.00,None,20.00
+Friday,2,10.00,Up to midnight,5.00,None,20.00
+Saturday,4,3.00,Up to midnight,5.00,None,20.00
