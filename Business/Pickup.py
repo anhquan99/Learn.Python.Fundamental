@@ -31,7 +31,7 @@ class Pickup:
         temporary_ticket.exist_time = exist_time
         temporary_ticket.price = self.__calculate_price(parked_time)
         self.__ticet_price = temporary_ticket.price
-        return temporary_ticket
+        return temporary_ticket, __picking_up_car.available_credit
 
     def checkout(self, pay_amount):
         balance_credit = self.__picking_up_car.available_credit + pay_amount

@@ -2,6 +2,8 @@
 class ParkingTicket:
     def __init__(self, arrive_time, fqn: str):
         self.arrive_time = arrive_time
+        if fqn is None:
+            fqn = ""
         self.fqn = fqn
         self.is_valid_fqn = self.check_valid_fqn(fqn)
         self.exist_time = None

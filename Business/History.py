@@ -1,6 +1,7 @@
 from Exception import CarException
+import os
 class History:
-    __date_format = "%m-%d-%Y, %H:%M"
+    __date_format = "%m-%d-%Y %H:%M"
     def __init__(self, cars: []):
         self.cars = cars
     def export_history_of_car(self, car_id):
@@ -11,10 +12,13 @@ class History:
         parked_date_str = ""
         for ticket in car.parking_tickets:
             if ticket.exist_time is not None:
-                parked_date_str += str(ticket.arrive_time.strftime(self.__date_format)) + " - " + str(ticket.exist_time.strftime(self.__date_format)) + "$%.1f\n" % ticket.price + "\n"
+                parked_date_str += str(ticket.arrive_time.strftime(self.__date_format)) + " - " + str(ticket.exist_time.strftime(self.__date_format)) + " $%.2f\n" % ticket.price + "\n"
                 total_payment += ticket.price
-        with open(car_id + ".txt", "w") as f:
-            f.write("Total payment: $%.1f\n" % total_payment)
-            f.write("Available credit: $%.1f\n" % car.available_credit)
+        file_name = car_id + ".txt"
+        with open(file_name, "w") as f:
+            f.write("Total payment: $%.2f\n" % total_payment)
+            f.write("Available credit: $%.2f\n" % car.available_credit)
             f.write(parked_date_str)
+        os.system(file_name)
+        return file_name
 
